@@ -1,18 +1,50 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const { Post } = require('../models');
+const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
       order: [['date', 'DESC']],
     });
 
     const posts = postData.map((project) => project.get({ plain: true }));
 
     res.render('homepage', {
-      posts
+      posts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+      order: [['date', 'DESC']],
+    });
+
+    const posts = postData.map((project) => project.get({ plain: true }));
+
+    res.render('dashboard', {
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
