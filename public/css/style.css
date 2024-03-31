@@ -32,23 +32,30 @@ nav {
     }
 }
 
-
-
 main {
+    width: 90%;
+    margin: 5%;
+}
+
+.post-card {
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.post-head{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    margin-bottom: 10px;
+}
 
-    & h1 {
-        font-size: 50px;
-        margin-bottom: 20px;
-    }
-
-    & p {
-        font-size: 20px;
-    }
+.post-date {
+    font-size: 12px;
+    text-align: right;
 }
 
 .login-form, .signup-form {

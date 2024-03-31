@@ -1,15 +1,13 @@
 module.exports = {
-    get_emoji: () => {
-      const randomNum = Math.random();
-      let book = "📗";
-  
-      if (randomNum > 0.7) {
-        book = "📘";
-      } else if (randomNum > 0.4) {
-        book = "📙";
-      }
-  
-      return `<span for="img" aria-label="book">${book}</span>`;
-    },
-  };
-  
+  format_time: (date) => {
+    return date.toLocaleTimeString();
+  },
+    format_date: (date) => {
+      const newDate = new Date(date);
+      const year = newDate.getFullYear();
+      const month = newDate.toLocaleString('default', { month: 'long' });
+      const day = newDate.getDate();
+      return `${month} ${day}, ${year}`;
+    }
+
+};
