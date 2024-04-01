@@ -25,6 +25,28 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -51,6 +73,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+router.get('/newpost', withAuth, (req, res) => {
+  res.render('newPost', {
+    logged_in: req.session.logged_in
+  });
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -68,5 +96,8 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
+
+
+
 
 module.exports = router;

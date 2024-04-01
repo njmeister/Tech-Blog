@@ -1,8 +1,7 @@
-{{#each posts as |post| }}
 <div class="post-card">
   <div class="post-head">
     <h2>{{post.title}}</h2>
-    <h3>{{post.user}}</h3>
+    <h3>{{post.user.username}}</h3>
   </div>
   <div class="post-body">
     <p>{{post.body}}</p>
@@ -10,9 +9,4 @@
   <div class="post-date">
     <p>{{format_date post.date}}</p>
   </div>
-</div>
-{{/each}}
-
-<div>
-  <a href="/newpost" class="new-post-btn">Create New Post</a>
 </div>

@@ -35,6 +35,9 @@ nav {
 main {
     width: 90%;
     margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .post-card {
@@ -43,6 +46,12 @@ main {
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
+    width: 100%;
+
+    & a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .post-head{
@@ -56,6 +65,28 @@ main {
 .post-date {
     font-size: 12px;
     text-align: right;
+}
+
+.new-post-btn {
+    background-color: lightblue;
+    color: black;
+    text-decoration: none;
+    padding: 15px 25px;
+    border: 2px solid darkblue;
+    border-radius: 15px;
+    font-size: 50px;
+    margin: 20px;
+}
+
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: lightblue;
 }
 
 .login-form, .signup-form {
@@ -101,6 +132,12 @@ main {
         color: white;
         border: none;
         border-radius: 5px;
+    }
+
+    & textarea {
+        font-size: 20px;
+        height: 100px;
+        width: 60vw;
     }
 }
 

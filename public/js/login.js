@@ -22,4 +22,3 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-// This code listens for the submit event on the login form and then collects the values from the email and password fields. The values are then sent to the /api/users/login route as a POST request. If the response is ok, the user is redirected to the homepage. If the response is not ok, an alert is shown.
