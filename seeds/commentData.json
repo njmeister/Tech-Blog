@@ -1,0 +1,20 @@
+[
+    {
+        "user_id": 1,
+        "post_id": 2,
+        "date": "2016-01-01",
+        "body": "This is a test comment."
+    },
+    {
+        "user_id": 2,
+        "post_id": 1,
+        "date": "2023-01-01",
+        "body": "This is a test comment."
+    },
+    {
+        "user_id": 3,
+        "post_id": 1,
+        "date": "2024-03-31",
+        "body": "This is another comment."
+    }
+]

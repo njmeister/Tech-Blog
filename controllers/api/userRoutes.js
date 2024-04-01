@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 
 router.post('/signup', async (req, res) => {
   try {
@@ -55,6 +55,29 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.post('/posts', async (req, res) => {
+  console.log(req.body);
+
+  try {
+
+    if (!req.session.logged_in) {
+      res.status(400).json({ message: 'You need to be logged in to create a post!' });
+      return;
+    }
+
+    console.log(req.session.user_id);
+    const postData = {...req.body, user_id: req.session.user_id};
+    console.log(postData);
+
+    const newPost = await Post.create(postData);
+
+    res.status(200).json(newPost);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err);
   }
 });
 
