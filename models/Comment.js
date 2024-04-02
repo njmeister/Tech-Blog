@@ -42,7 +42,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'commentt',
+    modelName: 'comment',
   }
 );
 
