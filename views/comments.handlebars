@@ -1,0 +1,14 @@
+{{#each comments as |comment| }}
+<div class="post-card">
+    <div class="post-head">
+      <h2>{{comment.title}}</h2>
+      <h3>{{comment.user.username}}</h3>
+    </div>
+    <div class="post-body">
+      <p>{{comment.body}}</p>
+    </div>
+    <div class="post-date">
+      <p>{{format_date comment.date}}</p>
+    </div>
+</div>
+{{/each}}

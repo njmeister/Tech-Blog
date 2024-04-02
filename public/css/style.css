@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+    & h1 {
+        font-size: 30px;
+        padding: 15px 20px;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+
+    button[type="submit"] {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+}
+
+main {
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-card {
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.post-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-date {
+    font-size: 12px;
+    text-align: right;
+}
+
+.new-post-btn {
+    background-color: lightblue;
+    color: black;
+    text-decoration: none;
+    padding: 15px 25px;
+    border: 2px solid darkblue;
+    border-radius: 15px;
+    font-size: 50px;
+    margin: 20px;
+    margin-top: 100px;
+}
+
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: lightblue;
+
+    & a {
+        font-size: 20px;
+        color: darkblue;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    & label {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    & input {
+        font-size: 20px;
+        height: 30px;
+    }
+
+    & button {
+        font-size: 20px;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    & textarea {
+        font-size: 20px;
+        height: 100px;
+        width: 60vw;
+    }
+}
+
+.form-group:last-child {
+    justify-content: center;
+}
