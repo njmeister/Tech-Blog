@@ -1,0 +1,20 @@
+<div class="post-card">
+  <div class="post-head">
+    <textarea>{{post.title}}</textarea>
+    <h3>{{post.user.username}}</h3>
+  </div>
+  <div class="post-body">
+    <textarea>{{post.body}}</textarea>
+  </div>
+  <div class="post-date">
+    <p>{{format_date post.date}}</p>
+  </div>
+  <div class="save-del">
+    <button class="edit-btn" onclick="editPost()">Save</button>
+    <button class="delete-btn" onclick="deletePost()">Delete</button>
+  </div>
+</div>
+
+
+
+<script src="/js/postHandler.js"></script>
