@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 router.post('/signup', async (req, res) => {
   try {
@@ -58,7 +58,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.post('/posts', async (req, res) => {
+router.post('/post', async (req, res) => {
   console.log(req.body);
 
   try {
@@ -80,5 +80,25 @@ router.post('/posts', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.post('/comments/:id', async (req, res) => {
+  try {
+    if (!req.session.logged_in) {
+      res.status(400).json({ message: 'You need to be logged in to create a comment!' });
+      return;
+    }
+
+    const commentData = {...req.body, user_id: req.session.user_id, post_id: req.params.id};
+    console.log(commentData);
+
+    const newComment = await Comment.create(commentData);
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err);
+  }
+});
+
 
 module.exports = router;
