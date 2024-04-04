@@ -3,18 +3,66 @@
         "user_id": 1,
         "post_id": 2,
         "date": "2016-01-01",
-        "body": "This is a test comment."
+        "body": "Proin eget euismod metus. Suspendisse ut purus tincidunt augue porta pellentesque. Donec est magna, dapibus a elementum in, feugiat sit amet felis."
     },
     {
         "user_id": 2,
         "post_id": 1,
         "date": "2023-01-01",
-        "body": "This is a test comment."
+        "body": "Mauris pretium nibh at sagittis vulputate. Nunc ac sagittis neque. Integer non pharetra elit, varius tempor leo. Curabitur accumsan, leo et blandit sodales, leo velit vulputate tellus, non porta justo odio quis lectus."
     },
     {
         "user_id": 3,
         "post_id": 1,
         "date": "2024-03-31",
-        "body": "This is another comment."
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 4,
+        "post_id": 2,
+        "date": "2022-01-01",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 5,
+        "post_id": 3,
+        "date": "2020-01-01",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 2,
+        "post_id": 3,
+        "date": "2021-01-01",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 1,
+        "post_id": 4,
+        "date": "2021-04-03",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 3,
+        "post_id": 6,
+        "date": "2020-12-11",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 4,
+        "post_id": 5,
+        "date": "2020-11-01",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 5,
+        "post_id": 7,
+        "date": "2020-03-13",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
+    },
+    {
+        "user_id": 2,
+        "post_id": 5,
+        "date": "2020-01-01",
+        "body": "Sed maximus lectus et ante laoreet, eget mollis metus hendrerit. Nulla interdum dictum commodo. Ut vulputate sed enim eget laoreet. Nam laoreet orci a pharetra ultrices."
     }
 ]

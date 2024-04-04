@@ -68,6 +68,57 @@ if (commentForm) {
     commentForm.addEventListener('submit', newCommentHandler);
 }
 
+const updatePostHandler = async (event) => {
+    event.preventDefault();
+  
+    const urlParts = window.location.pathname.split('/');
+    const id = urlParts[urlParts.length - 1];
+  
+    const title = document.querySelector('#title').value.trim();
+    const body = document.querySelector('#body').value.trim();
+  
+    if (title && body) {
+      const response = await fetch(`/api/users/post/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ title, body }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to update post');
+      }
+    }
+};
+
+const updatePostBtn = document.querySelector('.edit-btn');
+if (updatePostBtn) {
+    updatePostBtn.addEventListener('click', updatePostHandler);
+}
+
+const deletePostHandler = async (event) => {
+    event.preventDefault();
+  
+    const urlParts = window.location.pathname.split('/');
+    const id = urlParts[urlParts.length - 1];
+  
+    const response = await fetch(`/api/users/post/${id}`, {
+      method: 'DELETE',
+    });
+  
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to delete post');
+    }
+};
+
+const deletePostBtn = document.querySelector('.delete-btn');
+if (deletePostBtn) {
+    deletePostBtn.addEventListener('click', deletePostHandler);
+}
+
 
 function autoResize(textarea) {
   textarea.style.height = 'auto'; // Temporarily shrink textarea to get scroll height
@@ -75,8 +126,14 @@ function autoResize(textarea) {
 }
 
 // Select textarea and add event listener
-const textarea = document.querySelector('.new-comment-form #body');
-textarea.addEventListener('input', () => autoResize(textarea));
+const commentArea = document.querySelector('.new-comment-form #body');
+if (commentArea) {
+    commentArea.addEventListener('input', () => autoResize(commentArea));
+    autoResize(commentArea);
+}
 
-// Call function initially to resize on page load
-autoResize(textarea);
+const postArea = document.querySelector('.new-post-form #body');
+if (postArea) {
+    postArea.addEventListener('input', () => autoResize(postArea));
+    autoResize(postArea);
+}
