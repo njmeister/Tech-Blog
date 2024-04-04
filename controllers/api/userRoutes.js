@@ -103,6 +103,34 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+router.put('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/comments/:id', async (req, res) => {
   try {
     if (!req.session.logged_in) {
