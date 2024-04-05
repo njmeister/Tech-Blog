@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
+// CREATE a new user
 router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +17,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// LOGIN a user
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -48,6 +50,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// LOGOUT a user
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -58,6 +61,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// CREATE a new post
 router.post('/post', async (req, res) => {
   console.log(req.body);
 
@@ -81,6 +85,7 @@ router.post('/post', async (req, res) => {
   }
 });
 
+// Display form to edit a post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -103,6 +108,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// UPDATE a post
 router.put('/post/:id', async (req, res) => {
   try {
     const postData = await Post.update(req.body, {
@@ -117,6 +123,7 @@ router.put('/post/:id', async (req, res) => {
   }
 });
 
+// DELETE a post
 router.delete('/post/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({
@@ -131,6 +138,7 @@ router.delete('/post/:id', async (req, res) => {
   }
 });
 
+// CREATE a new comment
 router.post('/comments/:id', async (req, res) => {
   try {
     if (!req.session.logged_in) {
