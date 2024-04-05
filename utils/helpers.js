@@ -1,3 +1,4 @@
+// Purpose: This file contains helper functions that are used in the handlebars templates to format the date and time.
 module.exports = {
   format_time: (date) => {
     return date.toLocaleTimeString();

@@ -1,3 +1,4 @@
+// Logic to handle new post form submission
 const newPostHandler = async (event) => {
     event.preventDefault();
   
@@ -28,12 +29,13 @@ const newPostHandler = async (event) => {
     }
 }
 
-const postForm = document.querySelector('.new-post-form')
-
+const postForm = document.querySelector('.new-post-form');
+// Only add event listener if the form exists
 if (postForm) {
     postForm.addEventListener('submit', newPostHandler);
 }
 
+// Logic to handle new comment form submission
 const newCommentHandler = async (event) => {
     event.preventDefault();
 
@@ -62,12 +64,13 @@ const newCommentHandler = async (event) => {
     }
 };
 
-const commentForm = document.querySelector('.new-comment-form')
-
+const commentForm = document.querySelector('.new-comment-form');
+// Only add event listener if the form exists
 if (commentForm) {
     commentForm.addEventListener('submit', newCommentHandler);
 }
 
+// Logic to handle post update form submission
 const updatePostHandler = async (event) => {
     event.preventDefault();
   
@@ -93,10 +96,12 @@ const updatePostHandler = async (event) => {
 };
 
 const updatePostBtn = document.querySelector('.edit-btn');
+// Only add event listener if the button exists
 if (updatePostBtn) {
     updatePostBtn.addEventListener('click', updatePostHandler);
 }
 
+// Logic to handle post deletion
 const deletePostHandler = async (event) => {
     event.preventDefault();
   
@@ -115,6 +120,7 @@ const deletePostHandler = async (event) => {
 };
 
 const deletePostBtn = document.querySelector('.delete-btn');
+// Only add event listener if the button exists
 if (deletePostBtn) {
     deletePostBtn.addEventListener('click', deletePostHandler);
 }

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -25,6 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET one post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -63,6 +65,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// GET all comments
 router.get('/comments', async (req, res) => {
   try {
     const commentData = await Comment.findAll({
@@ -87,6 +90,7 @@ router.get('/comments', async (req, res) => {
   }
 });
 
+// GET all of the user's posts
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -113,12 +117,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// GET the new post form
 router.get('/newpost', withAuth, (req, res) => {
   res.render('newPost', {
     logged_in: req.session.logged_in
   });
 });
 
+// GET the new comment form
 router.get('/comment/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -141,6 +147,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
   }
 });
 
+// GET the login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -150,6 +157,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// GET the signup page
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -158,8 +166,5 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
-
-
-
 
 module.exports = router;
