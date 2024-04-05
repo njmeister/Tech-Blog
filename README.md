@@ -5,7 +5,7 @@
 
 This is my submission for the Tech Blog challenge in the UTA/EdX Coding Bootcamp. This challenge aimed to create a website that can connect to a database and allow users to log in and out, post blog entries, update or delete those entries, and comment on other posts.
 
-<a href="https://njm-tech-blog-75452fdd6827.herokuapp.com/">Link/a>
+<a href="https://njm-tech-blog-75452fdd6827.herokuapp.com/">Link</a>
 
 
 
